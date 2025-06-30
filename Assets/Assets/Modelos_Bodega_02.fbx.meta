@@ -3,7 +3,37 @@ guid: b5e491d4ff5d7ff4fb6e0b5a76112127
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Extintores_Senaletica
+    second: {fileID: 2100000, guid: f1320603d47968e4ebc77169df939528, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Senaleticas_Material
+    second: {fileID: 2100000, guid: 5034653a15e18e442ac0ea92bdd2f133, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Texture
+    second: {fileID: 2100000, guid: a59060ace1645e34981c98ab5d2a36c4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Atlas
+    second: {fileID: 2800000, guid: 23d77b0679416f44db2914697cfcefe1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Instrucciones_Extintores
+    second: {fileID: 2800000, guid: d22b7583edbe27043be1ffbd809913be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Senaleticas
+    second: {fileID: 2800000, guid: 4653d8f55ae2b354e81449892e4d8ffc, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
