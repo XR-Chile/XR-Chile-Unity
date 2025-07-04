@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
-
+using Watona.Variables;
 public class FireGraphBuilder : EditorWindow
 {
-    private float connectionThreshold = 10.0f; // Distance away from other nodes
+    private FloatVariable connectionThreshold; // Distance away from other nodes
     private static FireGraphBuilder current;
 
     [MenuItem("Tools/Build Fire Graph")]
@@ -26,7 +26,11 @@ public class FireGraphBuilder : EditorWindow
 
     private void OnGUI()
     {
-        connectionThreshold = EditorGUILayout.FloatField("Max Connection Distance", connectionThreshold);
+        connectionThreshold = (FloatVariable)EditorGUILayout.ObjectField(
+            "Max Connection Distance", 
+            connectionThreshold, 
+            typeof(FloatVariable), 
+            false);
 
         if (GUILayout.Button("Generate Fire Graph"))
         {
@@ -88,7 +92,7 @@ public class FireGraphBuilder : EditorWindow
                 if (a == b) continue;
 
                 float dist = Vector3.Distance(a.position, b.position);
-                if (dist <= connectionThreshold)
+                if (dist <= connectionThreshold.Value)
                 {
                     a.edges.Add(new FireGraphEdge(b.id, dist));
                 }

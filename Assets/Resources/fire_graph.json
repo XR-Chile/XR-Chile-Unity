@@ -11,6 +11,10 @@
                 {
                     "targetId": "Sphere_01 (2)",
                     "distance": 4.643490314483643
+                },
+                {
+                    "targetId": "Sphere_01 (1)",
+                    "distance": 7.2919816970825199
                 }
             ]
         },
@@ -25,10 +29,6 @@
                 {
                     "targetId": "Sphere_01 (3)",
                     "distance": 8.843647003173829
-                },
-                {
-                    "targetId": "Sphere_01 (1)",
-                    "distance": 7.0871710777282719
                 }
             ]
         },
@@ -50,7 +50,7 @@
                 },
                 {
                     "targetId": "Sphere_01 (1)",
-                    "distance": 8.096135139465332
+                    "distance": 8.398392677307129
                 },
                 {
                     "targetId": "Sphere_01 (4)",
@@ -73,36 +73,28 @@
                 {
                     "targetId": "Sphere_01 (2)",
                     "distance": 8.506309509277344
-                },
-                {
-                    "targetId": "Sphere_01 (1)",
-                    "distance": 4.928538799285889
                 }
             ]
         },
         {
             "id": "Sphere_01 (1)",
             "position": {
-                "x": -15.540000915527344,
+                "x": -3.0,
                 "y": 0.0,
-                "z": -11.260000228881836
+                "z": -4.800000190734863
             },
             "edges": [
                 {
-                    "targetId": "Sphere_01",
-                    "distance": 7.0871710777282719
+                    "targetId": "Sphere_01 (5)",
+                    "distance": 7.2919816970825199
                 },
                 {
                     "targetId": "Sphere_01 (2)",
-                    "distance": 8.096135139465332
-                },
-                {
-                    "targetId": "Sphere_01 (3)",
-                    "distance": 4.928538799285889
+                    "distance": 8.398392677307129
                 },
                 {
                     "targetId": "Sphere_01 (4)",
-                    "distance": 5.884326934814453
+                    "distance": 9.578857421875
                 }
             ]
         },
@@ -120,7 +112,7 @@
                 },
                 {
                     "targetId": "Sphere_01 (1)",
-                    "distance": 5.884326934814453
+                    "distance": 9.578857421875
                 }
             ]
         }
