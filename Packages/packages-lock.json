@@ -278,6 +278,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.watona.tools": {
+      "version": "https://github.com/elwatona/WatonaUtils.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d89d40aeaec73c85c052cf40ab7fe64abe7735eb"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
