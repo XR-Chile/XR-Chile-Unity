@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab94602edb7699b45821ddec58868be7, type: 3}
   m_Name: FireDistance
   m_EditorClassIdentifier: 
-  value: 0
+  value: 10
   DeveloperDescription: 

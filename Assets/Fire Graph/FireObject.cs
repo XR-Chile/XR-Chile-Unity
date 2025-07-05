@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class FireObject : MonoBehaviour
 {
     private Material material;
-
+    private FireParticle fireParticle;
     public float burn_time = 5.0f; //Seconds;
     public float combustibility = 0.5f;
     public float explosion_radius = 0.0f;
+    public GameObject fireParticles;
 
     [HideInInspector] public bool is_burning = false;
     [HideInInspector] public bool is_burnt = false;
     [HideInInspector] public float burn_timer = 0.0f;
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        GameObject.Instantiate(fireParticles, transform);
+    }
     void Start()
     {
         material = GetComponent<Renderer>().material;
+        fireParticle = GetComponentInChildren<FireParticle>();
     }
 
     public void Ignite()
@@ -64,6 +68,7 @@ public class FireObject : MonoBehaviour
     private void SetBurnProgress(float value)
     {
         material.SetFloat("_BurnProgress", value);
+        fireParticle.SetSize(value);
     }
-
+    
 }
