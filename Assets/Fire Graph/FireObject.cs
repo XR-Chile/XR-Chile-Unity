@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class FireObject : MonoBehaviour
 {
-    private Material material;
-    private FireParticle fireParticle;
+    private Material _material;
+    private FireParticle _fireParticle;
     public float burn_time = 5.0f; //Seconds;
     public float combustibility = 0.5f;
     public float explosion_radius = 0.0f;
-    public GameObject fireParticles;
+    public GameObject fireParticlesPrefab;
+    private GameObject _fireParticleGameObject;
 
     [HideInInspector] public bool is_burning = false;
     [HideInInspector] public bool is_burnt = false;
@@ -16,12 +17,13 @@ public class FireObject : MonoBehaviour
 
     void Awake()
     {
-        GameObject.Instantiate(fireParticles, transform);
+        _fireParticleGameObject = GameObject.Instantiate(fireParticlesPrefab, transform);
+        _fireParticleGameObject.transform.position = transform.position;
     }
     void Start()
     {
-        material = GetComponent<Renderer>().material;
-        fireParticle = GetComponentInChildren<FireParticle>();
+        _material = GetComponent<Renderer>().material;
+        _fireParticle = _fireParticleGameObject.GetComponent<FireParticle>();
     }
 
     public void Ignite()
@@ -33,6 +35,7 @@ public class FireObject : MonoBehaviour
 
         is_burning = true;
         burn_timer = burn_time;
+        
         Debug.Log($"{gameObject.name} has ignited!");
     }
 
@@ -49,6 +52,7 @@ public class FireObject : MonoBehaviour
             burn_timer -= Time.deltaTime;
             float progress = Mathf.Clamp01(1.0f - (burn_timer / burn_time));
             SetBurnProgress(progress);
+            _fireParticle.UpdateValues(progress);
 
             if (burn_timer <= 0.0f)
             {
@@ -67,8 +71,7 @@ public class FireObject : MonoBehaviour
 
     private void SetBurnProgress(float value)
     {
-        material.SetFloat("_BurnProgress", value);
-        fireParticle.SetSize(value);
+        _material.SetFloat("_BurnProgress", value);
     }
     
 }
