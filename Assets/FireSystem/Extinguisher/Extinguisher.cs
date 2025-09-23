@@ -1,6 +1,7 @@
+using Oculus.Interaction.HandGrab;
 using UnityEngine;
 
-public class Extinguisher : MonoBehaviour
+public class Extinguisher : MonoBehaviour, IHandGrabUseDelegate
 {
     [Header("Settings")]
     [SerializeField] private FireType _type;
@@ -51,4 +52,14 @@ public class Extinguisher : MonoBehaviour
 
     public void StartExtinguishing() => _isExtinguishing = true;
     public void StopExtinguishing() => _isExtinguishing = false;
+
+    public void BeginUse() => _isExtinguishing = true;
+
+    public void EndUse() => _isExtinguishing = false;
+
+    public float ComputeUseStrength(float strength)
+    {
+        throw new System.NotImplementedException();
+    }
+
 }

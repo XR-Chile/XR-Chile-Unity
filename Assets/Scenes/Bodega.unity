@@ -2241,6 +2241,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Extinguiser
       objectReference: {fileID: 0}
+    - target: {fileID: 2845817721467697280, guid: 607161f146bac5a4badf3c9701fcf413, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845817721467697280, guid: 607161f146bac5a4badf3c9701fcf413, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6251622785117158927, guid: 607161f146bac5a4badf3c9701fcf413, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.9396138
