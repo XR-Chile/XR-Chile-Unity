@@ -1,4 +1,4 @@
-
+using System;
 using UnityEngine;
 public class FireObject : MonoBehaviour, IExtinguishable
 {
@@ -30,6 +30,8 @@ public class FireObject : MonoBehaviour, IExtinguishable
     public bool IsBurning => _isBurning;
     public bool HasBurnt => _hasBurnt;
     public float BurnTimer => _burnTimer;
+
+    public static event Action Extinguishing;
 
     public float GetPercentCombusted() => Mathf.Clamp01((burnTime - _burnTimer) / burnTime);
     public float GetPercentPropagated() => Mathf.Clamp01((_expansionTime - _expansionTimer) / _expansionTime); 
@@ -102,6 +104,8 @@ public class FireObject : MonoBehaviour, IExtinguishable
         Debug.LogError("Extinguishing Fire");
 
         _currentLife = Mathf.Max(_currentLife -= extinguishEffect, 0);
+
+        Extinguishing?.Invoke();
 
         if (_currentLife <= 0) CompletelyExtinguish();
     }

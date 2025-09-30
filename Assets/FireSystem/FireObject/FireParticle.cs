@@ -1,9 +1,11 @@
 using Watona.Variables;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(ParticleSystem))]
 public class FireParticle : MonoBehaviour
 {
+    public static event Action ParticleCollision;
     [SerializeField] private FloatVariable _fireDistance;
     [SerializeField] private ParticleSystem _particle;
     [SerializeField] private BoxCollider _collider;
@@ -46,6 +48,7 @@ public class FireParticle : MonoBehaviour
         if (other.GetComponentInParent<Extinguisher>() != null)
         {
             Debug.LogWarning("Foam hitted the flames");
+            ParticleCollision?.Invoke();
         }
     }
 }

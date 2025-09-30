@@ -25,7 +25,7 @@ public class FoamProjectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         IExtinguishable extinguishable = other.GetComponentInParent<IExtinguishable>();
-
+        
         extinguishable?.Extinguish(_foamType);
     }
 
